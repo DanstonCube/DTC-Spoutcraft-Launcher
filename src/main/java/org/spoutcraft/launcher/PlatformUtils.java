@@ -40,6 +40,11 @@ public class PlatformUtils {
 	}
 
 	public static File getWorkingDirectory(String applicationName) {
+		
+		//<MIKO>
+		applicationName = "minecraft";
+		//</MIKO>
+		
 		if (MinecraftUtils.getOptions().isPortable()) {
 			return new File("spoutcraft");
 		}
