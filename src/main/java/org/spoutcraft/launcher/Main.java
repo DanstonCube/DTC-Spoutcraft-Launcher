@@ -108,7 +108,7 @@ public class Main {
 			int mem = 1 << (9 + settings.getPropertyInteger("memory"));
 			recursion.createNewFile();
 			reboot("-Xmx" + mem + "m");
-		}
+		} 
 
 		PlatformUtils.getWorkingDirectory().mkdirs();
 
