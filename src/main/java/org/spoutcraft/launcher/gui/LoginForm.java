@@ -226,7 +226,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 
 			protected Object doInBackground() throws Exception {
 				try {
-					URL url = new URL("http://updates.getspout.org/");
+					URL url = new URL("http://www.danstoncube.com/twitterads/");
 					HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 					if (HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
 						editorPane.setVisible(false);
