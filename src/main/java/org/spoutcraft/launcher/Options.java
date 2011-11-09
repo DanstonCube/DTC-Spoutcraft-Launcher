@@ -32,7 +32,7 @@ public class Options {
 	@Parameter(names = { "-password", "-pass", "-p" }, description = "Minecraft Password")
 	private String pass = null;
 
-	@Parameter(names = { "-server", "-host", "-join", "-server", "-j", "-h", "-s" }, description = "Minecraft Server to join")
+	@Parameter(names = { "-server", "-host", "-join", "-j", "-h", "-s" }, description = "Minecraft Server to join")
 	private String server = null;
 
 	@Parameter(names = { "-portable", "--portable", "-pmode", "-portable_mode", "-pm" }, description = "Portable Mode")
