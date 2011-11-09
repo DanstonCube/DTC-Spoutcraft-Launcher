@@ -106,7 +106,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 	private JComboBox usernameField = new JComboBox();
 	private JButton loginButton = new JButton("Login");
 	JButton optionsButton = new JButton("Options");
-	private JCheckBox rememberCheckbox = new JCheckBox("Remember");
+	private JCheckBox rememberCheckbox = new JCheckBox("Se souvenir");
 	private JButton loginSkin1;
 	private List<JButton> loginSkin1Image;
 	private JButton loginSkin2;
@@ -147,10 +147,10 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 		usernameField.addActionListener(this);
 		usernameField.setOpaque(false);
 
-		setIconImage(Toolkit.getDefaultToolkit().getImage(LoginForm.class.getResource("/org/spoutcraft/launcher/favicon.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(LoginForm.class.getResource("/org/spoutcraft/launcher/minecraft.png")));
 		setResizable(false);
 
-		setTitle("Spoutcraft Launcher");
+		setTitle("Lanceur DansTonCube !");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -163,9 +163,9 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 
 		JLabel lblLogo = new JLabel("");
 		lblLogo.setBounds(8, 0, 294, 99);
-		lblLogo.setIcon(new ImageIcon(LoginForm.class.getResource("/org/spoutcraft/launcher/spoutcraft.png")));
+		lblLogo.setIcon(new ImageIcon(LoginForm.class.getResource("/org/spoutcraft/launcher/dtclogo.png")));
 
-		JLabel lblMinecraftUsername = new JLabel("Minecraft Username: ");
+		JLabel lblMinecraftUsername = new JLabel("Login: ");
 		lblMinecraftUsername.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblMinecraftUsername.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblMinecraftUsername.setBounds(-17, 17, 150, 14);
@@ -179,7 +179,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 		passwordField.setFont(new Font("Arial", Font.PLAIN, 11));
 		passwordField.setBounds(143, 42, 119, 22);
 
-		loginSkin1 = new JButton("Login as Player");
+		loginSkin1 = new JButton("Login");
 		loginSkin1.setFont(new Font("Arial", Font.PLAIN, 11));
 		loginSkin1.setBounds(72, 428, 119, 23);
 		loginSkin1.setOpaque(false);
@@ -187,7 +187,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 		loginSkin1.setVisible(false);
 		loginSkin1Image = new ArrayList<JButton>();
 
-		loginSkin2 = new JButton("Login as Player");
+		loginSkin2 = new JButton("Login");
 		loginSkin2.setFont(new Font("Arial", Font.PLAIN, 11));
 		loginSkin2.setBounds(261, 428, 119, 23);
 		loginSkin2.setOpaque(false);
@@ -203,11 +203,11 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 
 		readUsedUsernames();
 
-		JLabel purchaseAccount = new HyperlinkJLabel("<html><u>Need a minecraft account?</u></html>", "http://www.minecraft.net/register.jsp");
+		JLabel purchaseAccount = new HyperlinkJLabel("<html><u>Forums DTC</u></html>", "http://www.danstoncube.com/forum/");
 		purchaseAccount.setHorizontalAlignment(SwingConstants.RIGHT);
 		purchaseAccount.setBounds(243, 70, 111, 14);
 
-		purchaseAccount.setText("<html><u>Need an account?</u></html>");
+		purchaseAccount.setText("<html><u>Forums DTC</u></html>");
 		purchaseAccount.setFont(new Font("Arial", Font.PLAIN, 11));
 		purchaseAccount.setForeground(new Color(0, 0, 255));
 		usernameField.setBounds(143, 14, 119, 25);
@@ -218,7 +218,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 		final JTextPane editorPane = new JTextPane();
 		editorPane.setContentType("text/html");
 
-		final JLabel loadingEditor = new JLabel("Loading News Feed...");
+		final JLabel loadingEditor = new JLabel("Chargement des niouzes...");
 		loadingEditor.setBounds(422, 320, 10, 50);
 		loadingEditor.setVisible(false);
 
@@ -251,7 +251,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 						loadingEditor.setVisible(false);
 						editorPane.setVisible(true);
 					} else {
-						editorPane.setText("Oh Noes! Our Tumblr Feed is Down!");
+						editorPane.setText("Hum, impossible d'afficher la page de niouzes :s");
 					}
 				} catch (MalformedURLException e1) {
 					e1.printStackTrace();
@@ -315,16 +315,16 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 		loginPane.add(optionsButton);
 		contentPane.add(loginPane);
 
-		JLabel offlineMessage = new JLabel("Could not connect to minecraft.net");
+		JLabel offlineMessage = new JLabel("Connexion impossible à minecraft.net");
 		offlineMessage.setFont(new Font("Arial", Font.PLAIN, 14));
 		offlineMessage.setBounds(25, 40, 217, 17);
 
-		JButton tryAgain = new JButton("Try Again");
+		JButton tryAgain = new JButton("Réessayer");
 		tryAgain.setOpaque(false);
 		tryAgain.setFont(new Font("Arial", Font.PLAIN, 12));
 		tryAgain.setBounds(257, 20, 100, 25);
 
-		JButton offlineMode = new JButton("Offline Mode");
+		JButton offlineMode = new JButton("Mode Offline");
 		offlineMode.setOpaque(false);
 		offlineMode.setFont(new Font("Arial", Font.PLAIN, 12));
 		offlineMode.setBounds(257, 52, 100, 25);
@@ -342,7 +342,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 		contentPane.add(trans);
 		contentPane.add(progressBar);
 
-		final JLabel background = new JLabel("Loading...");
+		final JLabel background = new JLabel("Chargement...");
 		background.setVerticalAlignment(SwingConstants.CENTER);
 		background.setHorizontalAlignment(SwingConstants.CENTER);
 		background.setBounds(0, 0, 854, 480);
@@ -618,16 +618,16 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 
 			protected Boolean doInBackground() throws Exception {
 				progressBar.setVisible(true);
-				progressBar.setString("Connecting to www.minecraft.net...");
+				progressBar.setString("Connexion à www.minecraft.net...");
 				try {
 					values = MinecraftUtils.doLogin(user, pass, progressBar);
 					return true;
 				} catch (BadLoginException e) {
-					JOptionPane.showMessageDialog(getParent(), "Incorrect usernameField/passwordField combination");
+					JOptionPane.showMessageDialog(getParent(), "Utilisateur ou mot de passe incorrect");
 					this.cancel(true);
 					progressBar.setVisible(false);
 				} catch (MinecraftUserNotPremiumException e) {
-					JOptionPane.showMessageDialog(getParent(), "The specified account is not premium");
+					JOptionPane.showMessageDialog(getParent(), "Ce compte n'est pas un compte premium");
 					this.cancel(true);
 					progressBar.setVisible(false);
 				} catch (MCNetworkException e) {
@@ -660,9 +660,9 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 					}
 
 					if (authFailed) {
-						JOptionPane.showMessageDialog(getParent(), "Unable to authenticate account with minecraft.net");
+						JOptionPane.showMessageDialog(getParent(), "Impossible d'autentifier le compte sur minecraft.net");
 					} else {
-						int result = JOptionPane.showConfirmDialog(getParent(), "Would you like to run in offline mode?", "Unable to Connect to Minecraft.net", JOptionPane.YES_NO_OPTION);
+						int result = JOptionPane.showConfirmDialog(getParent(), "Voulez-vous passer en mode hors-ligne ?", "Connexion impossible à minecraft.net", JOptionPane.YES_NO_OPTION);
 						if (result == JOptionPane.YES_OPTION) {
 							values = new String[] { "0", "0", user, "0" };
 							return true;
@@ -671,7 +671,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 					this.cancel(true);
 					progressBar.setVisible(false);
 				} catch (OutdatedMCLauncherException e) {
-					JOptionPane.showMessageDialog(getParent(), "The unthinkable has happened, alert dev@getspout.org!!!!");
+					JOptionPane.showMessageDialog(getParent(), "VROUM VROUM, le launcher est trop vieux, c'est quoi ce vieil admin ?!?");
 					progressBar.setVisible(false);
 				} catch (UnsupportedEncodingException e) {
 					e.printStackTrace();
@@ -737,6 +737,9 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 					}
 
 					protected Boolean doInBackground() throws Exception {
+						//MIKO
+						return true;
+						/*
 						publish("Checking for Minecraft Update...\n");
 						try {
 							mcUpdate = gu.checkMCUpdate(new File(GameUpdater.binDir + File.separator + "version"));
@@ -751,6 +754,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 							spoutUpdate = false;
 						}
 						return true;
+						*/
 					}
 
 					protected void process(List<String> chunks) {
@@ -787,7 +791,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
-					JOptionPane.showMessageDialog(getParent(), "Download Interrupted!");
+					JOptionPane.showMessageDialog(getParent(), "Download Interrompu !");
 					LauncherFrame.errorInDownload = true;
 					error = true;
 					loginButton.setEnabled(true);

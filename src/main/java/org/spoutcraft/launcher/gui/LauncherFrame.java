@@ -57,7 +57,7 @@ public class LauncherFrame extends Frame implements WindowListener {
 		this.setSize(new Dimension(870, 518));
 		this.setResizable(true);
 		this.addWindowListener(this);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(LoginForm.class.getResource("/org/spoutcraft/launcher/favicon.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(LoginForm.class.getResource("/org/spoutcraft/launcher/minecraft.png")));
 	}
 
 	public void setLoginForm(LoginForm form) {
@@ -80,7 +80,7 @@ public class LauncherFrame extends Frame implements WindowListener {
 			errorInDownload = true;
 		}
 		if (applet == null || errorInDownload) {
-			String message = "Failed to launch Spoutcraft!";
+			String message = "Impossible de lancer Minecraft !";
 			this.setVisible(false);
 			JOptionPane.showMessageDialog(getParent(), message);
 			this.dispose();
