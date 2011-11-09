@@ -29,6 +29,7 @@ import org.spoutcraft.launcher.logs.SystemConsoleListener;
 
 import com.beust.jcommander.JCommander;
 
+@SuppressWarnings("unused")
 public class Main {
 
 	static String[] args_temp;

@@ -35,6 +35,7 @@ import org.spoutcraft.launcher.PlatformUtils;
 //import org.spoutcraft.launcher.SettingsHandler;
 import org.spoutcraft.launcher.exception.CorruptedMinecraftJarException;
 
+@SuppressWarnings("unused")
 public class LauncherFrame extends Frame implements WindowListener {
 	private static final long serialVersionUID = 4524937541564722358L;
 	private MinecraftAppletEnglober minecraft;
