@@ -35,31 +35,31 @@ public class PlatformUtils {
 
 	public static File getWorkingDirectory() {
 		if (workDir == null)
-			workDir = getWorkingDirectory("spoutcraft");
+			workDir = getWorkingDirectory("danstoncube");
 		return workDir;
 	}
 
 	public static File getWorkingDirectory(String applicationName) {
 		//<MIKO>
-		//applicationName = "minecraft";
+		//applicationName = "danstoncube";
 		//</MIKO>
 		
 		if (MinecraftUtils.getOptions().isPortable()) {
-			return new File("spoutcraft");
+			return new File("danstoncube");
 		}
 		String userHome = System.getProperty("user.home", ".");
 		File workingDirectory;
 		switch (getPlatform()) {
 			case linux:
 			case solaris:
-				workingDirectory = new File(userHome, '.' + applicationName + '/');
+				workingDirectory = new File(userHome, applicationName + '/');
 				break;
 			case windows:
 				String applicationData = System.getenv("APPDATA");
 				if (applicationData != null)
-					workingDirectory = new File(applicationData, "." + applicationName + '/');
+					workingDirectory = new File(applicationData,  applicationName + '/');
 				else
-					workingDirectory = new File(userHome, '.' + applicationName + '/');
+					workingDirectory = new File(userHome, applicationName + '/');
 				break;
 			case macos:
 				workingDirectory = new File(userHome, "Library/Application Support/" + applicationName);

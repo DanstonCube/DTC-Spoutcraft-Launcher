@@ -738,8 +738,8 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 
 					protected Boolean doInBackground() throws Exception {
 						//MIKO
-						return true;
-						/*
+						//return true;
+						
 						publish("Checking for Minecraft Update...\n");
 						try {
 							mcUpdate = gu.checkMCUpdate(new File(GameUpdater.binDir + File.separator + "version"));
@@ -754,7 +754,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 							spoutUpdate = false;
 						}
 						return true;
-						*/
+						
 					}
 
 					protected void process(List<String> chunks) {

@@ -50,7 +50,7 @@ public class LauncherFrame extends Frame implements WindowListener {
 	// private static SettingsHandler settings = new SettingsHandler("defaults/spoutcraft.properties", new File(PlatformUtils.getWorkingDirectory(), "spoutcraft" + File.separator + "spoutcraft.properties"));
 
 	public LauncherFrame() {
-		super("Spoutcraft");
+		super("DansTonCube");
 		super.setVisible(true);
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setLocation((dim.width - 870) / 2, (dim.height - 518) / 2);
