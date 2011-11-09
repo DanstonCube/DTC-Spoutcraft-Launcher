@@ -35,7 +35,7 @@ public class PlatformUtils {
 
 	public static File getWorkingDirectory() {
 		if (workDir == null)
-			workDir = getWorkingDirectory("minecraft");
+			workDir = getWorkingDirectory("spoutcraft");
 		return workDir;
 	}
 
