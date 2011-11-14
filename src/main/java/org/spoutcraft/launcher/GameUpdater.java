@@ -368,7 +368,9 @@ public class GameUpdater implements DownloadListener {
 		if (devmode) {
 			url = new URL("http://ci.getspout.org/job/Spoutcraft/lastSuccessfulBuild/buildNumber");
 		} else {
-			url = new URL("http://ci.getspout.org/job/Spoutcraft/Recommended/buildNumber");
+			//url = new URL("http://ci.getspout.org/job/Spoutcraft/Recommended/buildNumber");
+			//MIKO: url danstoncube pour les maj "prod", on garde les url spout pour le dev
+			url = new URL("http://www.danstoncube.com/launcher/dtc-scl-buildnumber");
 		}
 
 		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
@@ -380,7 +382,56 @@ public class GameUpdater implements DownloadListener {
 		in.close();
 		return null;
 	}
+	
+	public String getDTCVersion() throws Exception {
+		String version;
+		URL url = new URL("http://www.danstoncube.com/launcher/dtc-scl-mcversion");
+		
+		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+		String str = in.readLine();
+		if (str != null) {
+			version = str;
+			return version;
+		}
+		in.close();
+		return null;
+	}
+	
+	public boolean checkDTCUpdate(File versionFile) throws Exception {
+		if (!GameUpdater.binDir.exists())
+			return true;
+		if (!new File(binDir, "natives").exists())
+			return true;
+		if (!versionFile.exists())
+			return true;
+		if ((new File(binDir, "minecraft.jar").length() < 1500))
+			return true;
+		
+		
+		BufferedReader br = new BufferedReader(new FileReader(versionFile));
+		String line;
+		String version = null;
+		if ((line = br.readLine()) != null) {
+			version = line;
+		}
+		
+		String latest = this.getDTCVersion();
+		
+		if (latest == null)
+			return false;
+		if (version == null)
+			return true;
+		if (version.contains("."))
+			return true;
 
+		
+		
+		int c = Integer.parseInt(version);
+		int l = Integer.parseInt(latest);
+
+		return c < l || (c > l && !devmode);		
+	}
+	
 	public boolean checkSpoutUpdate() throws Exception {
 		if (!PlatformUtils.getWorkingDirectory().exists())
 			return true;
@@ -411,7 +462,7 @@ public class GameUpdater implements DownloadListener {
 		return c < l || (c > l && !devmode);
 
 	}
-
+	
 	public boolean allowUpdate() {
 		if (allowUpdates == -1) {
 			try {
