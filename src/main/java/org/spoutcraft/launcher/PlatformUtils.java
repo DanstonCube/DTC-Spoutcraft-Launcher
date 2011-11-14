@@ -45,25 +45,25 @@ public class PlatformUtils {
 		//</MIKO>
 		
 		if (MinecraftUtils.getOptions().isPortable()) {
-			return new File("spoutcraft");
+			return new File(applicationName);
 		}
+		
 		String userHome = System.getProperty("user.home", ".");
 		File workingDirectory;
 		switch (getPlatform()) {
 			case linux:
 			case solaris:
 				//workingDirectory = new File(userHome, "." + applicationName + '/');
-				workingDirectory = new File(applicationName + '/');
+				workingDirectory = new File(userHome, applicationName + '/');
 				break;
 			case windows:
 				workingDirectory = new File(applicationName + '/');
-				/* MIKO
+				
 				String applicationData = System.getenv("APPDATA");
 				if (applicationData != null)										
-					workingDirectory = new File(applicationData,  "." + applicationName + '/');
+					workingDirectory = new File(applicationData, applicationName + '/');
 				else
-					workingDirectory = new File(userHome, "." + applicationName + '/');
-				*/
+					workingDirectory = new File(userHome, applicationName + '/');
 				break;
 			case macos:
 				workingDirectory = new File(userHome, "Library/Application Support/" + applicationName);
@@ -73,7 +73,7 @@ public class PlatformUtils {
 				//workingDirectory = new File(userHome, applicationName + '/');
 		}
 		if ((!workingDirectory.exists()) && (!workingDirectory.mkdirs()))
-			throw new RuntimeException("The working directory could not be created: " + workingDirectory);
+			throw new RuntimeException("Impossible de créer le dossier: " + workingDirectory);
 		return workingDirectory;
 	}
 
