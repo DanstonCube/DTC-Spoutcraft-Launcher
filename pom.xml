@@ -8,10 +8,10 @@
 
 	<!-- Project information -->
 	<groupId>org.spoutcraft</groupId>
-	<artifactId>launcher</artifactId>
-	<version>dev-SNAPSHOT</version>
-	<name>Spoutcraft Launcher</name>
-	<url>http://www.spoutcraft.org</url>
+	<artifactId>DansTonCube</artifactId>
+	<version>dev</version>
+	<name>Lanceur DansTonCube</name>
+	<url>http://www.danstoncube.com</url>
 	<description></description>
 
 	<properties>
