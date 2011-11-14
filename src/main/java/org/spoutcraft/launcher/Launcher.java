@@ -34,7 +34,7 @@ public class Launcher {
 		File jinputJar = new File(mcBinFolder, "jinput.jar");
 		File lwglJar = new File(mcBinFolder, "lwjgl.jar");
 		File lwjgl_utilJar = new File(mcBinFolder, "lwjgl_util.jar");
-
+		
 		URL urls[] = new URL[4];
 		try {
 			urls[0] = minecraftJar.toURI().toURL();

@@ -41,7 +41,7 @@ public class PlatformUtils {
 
 	public static File getWorkingDirectory(String applicationName) {
 		//<MIKO>
-		//applicationName = "danstoncube";
+		applicationName = "danstoncube";
 		//</MIKO>
 		
 		if (MinecraftUtils.getOptions().isPortable()) {
@@ -52,20 +52,25 @@ public class PlatformUtils {
 		switch (getPlatform()) {
 			case linux:
 			case solaris:
-				workingDirectory = new File(userHome, "." + applicationName + '/');
+				//workingDirectory = new File(userHome, "." + applicationName + '/');
+				workingDirectory = new File(applicationName + '/');
 				break;
 			case windows:
+				workingDirectory = new File(applicationName + '/');
+				/* MIKO
 				String applicationData = System.getenv("APPDATA");
-				if (applicationData != null)
+				if (applicationData != null)										
 					workingDirectory = new File(applicationData,  "." + applicationName + '/');
 				else
 					workingDirectory = new File(userHome, "." + applicationName + '/');
+				*/
 				break;
 			case macos:
 				workingDirectory = new File(userHome, "Library/Application Support/" + applicationName);
 				break;
 			default:
-				workingDirectory = new File(userHome, applicationName + '/');
+				workingDirectory = new File(applicationName + '/');
+				//workingDirectory = new File(userHome, applicationName + '/');
 		}
 		if ((!workingDirectory.exists()) && (!workingDirectory.mkdirs()))
 			throw new RuntimeException("The working directory could not be created: " + workingDirectory);
