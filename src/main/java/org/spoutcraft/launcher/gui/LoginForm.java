@@ -742,7 +742,7 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 						
 						publish("Checking for Minecraft Update...\n");
 						try {
-							mcUpdate = gu.checkMCUpdate(new File(GameUpdater.binDir + File.separator + "version"));
+							mcUpdate = gu.checkDTCUpdate(new File(GameUpdater.binDir + File.separator + "version"));
 						} catch (Exception e) {
 							mcUpdate = false;
 						}

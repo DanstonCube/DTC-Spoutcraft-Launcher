@@ -232,7 +232,8 @@ public class GameUpdater implements DownloadListener {
 		dos.writeUTF(version);
 		dos.close();
 	}
-
+	
+	@Deprecated
 	public Boolean checkMCUpdate(File versionFile) throws Exception {
 		if (!GameUpdater.binDir.exists())
 			return true;
