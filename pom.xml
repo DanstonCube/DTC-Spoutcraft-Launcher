@@ -101,11 +101,6 @@
 					<include>*</include>
 					<include>**/*</include>
 				</includes>
-				<excludes>
-					<exclude>icon.icns</exclude>
-					<exclude>Info.plist</exclude>
-					<exclude>JavaApplicationStub</exclude>
-				</excludes>
 			</resource>
 		</resources>
 		<!-- Plugins -->
@@ -150,6 +145,7 @@
 					</execution>
 				</executions>
 			</plugin>
+
 		</plugins>
 	</build>
 
@@ -218,7 +214,7 @@
 							<bundleName>${project.name}</bundleName>
 							<iconFile>${basedir}/src/main/resources/icon.icns</iconFile>
 							<dictionaryFile>src/main/resources/Info.plist</dictionaryFile>
-							<javaApplicationStub>${basedir}/src/main/resources/JavaApplicationStub</javaApplicationStub>
+							<javaApplicationStub>${basedir}/src/JavaApplicationStub</javaApplicationStub>
 							<additionalResources>
 								<fileSet>
 									<directory>${basedir}</directory>
