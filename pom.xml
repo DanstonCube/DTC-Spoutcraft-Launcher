@@ -166,7 +166,7 @@
 								<configuration>
 									<headerType>gui</headerType>
 									<stayAlive>true</stayAlive>
-									<outfile>${project.build.directory}/${project.artifactId}-${project.version}.exe</outfile>
+									<outfile>${project.build.directory}/${project.artifactId}-dev.exe</outfile>
 									<classPath>
 										<mainClass>${project.mainClass}</mainClass>
 										<addDependencies>false</addDependencies>

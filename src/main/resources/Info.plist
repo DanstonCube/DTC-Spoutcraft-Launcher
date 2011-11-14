@@ -29,7 +29,7 @@
       <key>VMOptions</key>
       <string>-Xms512M -Xmx1024M</string>
       <key>ClassPath</key>
-      <array><string>$JAVAROOT/launcher-dev-SNAPSHOT.jar</string></array>
+      <array><string>$JAVAROOT/DansTonCube-dev.jar</string></array>
     </dict>
   </dict>
 </plist>
