@@ -41,6 +41,12 @@ public class Options {
 	@Parameter(names = { "-safe", "-smode", "-safe_mode", "-sm" }, description = "Safe Mode - Prevents Addons from being loaded")
 	private boolean safe_mode = false;
 
+	//<MIKO>
+	@Parameter(names = { "-noupdates", "-dtc"}, description = "DTC - ne check aucune mise a jour")
+	private boolean noupdates = false;
+	//<MIKO>
+	
+	
 	public List<String> getParameters() {
 		return parameters;
 	}
@@ -69,6 +75,11 @@ public class Options {
 		return null;
 	}
 
+	
+	public boolean isNoUpdates() {
+		return noupdates;
+	}
+	
 	public boolean isPortable() {
 		return portable;
 	}

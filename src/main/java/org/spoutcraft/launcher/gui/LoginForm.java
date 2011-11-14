@@ -739,15 +739,21 @@ public class LoginForm extends JFrame implements ActionListener, DownloadListene
 					protected Boolean doInBackground() throws Exception {
 						//MIKO
 						//return true;
+						if(MinecraftUtils.getOptions().isNoUpdates())
+						{
+							mcUpdate = false;
+							spoutUpdate = false;
+							return true;
+						}
 						
-						publish("Checking for Minecraft Update...\n");
+						publish("Vérifie les mises à jour de Minecraft...\n");
 						try {
 							mcUpdate = gu.checkDTCUpdate(new File(GameUpdater.binDir + File.separator + "version"));
 						} catch (Exception e) {
 							mcUpdate = false;
 						}
 
-						publish("Checking for Spout update...\n");
+						publish("Vérifie les mises à jour de Spout...\n");
 						try {
 							spoutUpdate = mcUpdate || gu.checkSpoutUpdate();
 						} catch (Exception e) {
