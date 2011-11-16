@@ -135,26 +135,16 @@ public class Main {
 		
 		LoginForm login = new LoginForm();
 		
-		login.setVisible(true);
-
+		
 		
 		if(options.getUser() == null && options.getPass() == null)
 		{
-			//login.setVisible(true);
+			login.setVisible(true);
 		}		
 		else
-		{
-			System.out.println("User: " + options.getUser());
-			System.out.println("Pass: " + options.getPass());
-			System.out.println("Serv: " + options.getServer());
-			
-			login.doLogin( options.getUser(), options.getPass());
+		{			
+			login.doLogin(options.getUser(), options.getPass());			
 		}
-		
-
-
-		
-		
 	}
 
 	private static int getBuild() {
