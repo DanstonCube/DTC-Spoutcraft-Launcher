@@ -134,6 +134,10 @@ public class Main {
 		// Court-circuite la fenetre de login et lance directement minecraft
 		
 		LoginForm login = new LoginForm();
+		
+		login.setVisible(true);
+
+		
 		if(options.getUser() == null && options.getPass() == null)
 		{
 			//login.setVisible(true);
@@ -143,10 +147,14 @@ public class Main {
 			System.out.println("User: " + options.getUser());
 			System.out.println("Pass: " + options.getPass());
 			System.out.println("Serv: " + options.getServer());
+			
+			login.doLogin( options.getUser(), options.getPass());
 		}
 		
-		login.setVisible(true);
 
+
+		
+		
 	}
 
 	private static int getBuild() {
