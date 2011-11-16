@@ -131,19 +131,14 @@ public class Main {
 		
 		
 		/* Miko */
-		// Court-circuite la fenetre de login et lance directement minecraft
+
 		
 		LoginForm login = new LoginForm();
+		login.setVisible(true);
 		
-		
-		
-		if(options.getUser() == null && options.getPass() == null)
+		if(options.getUser() != null && options.getPass() != null)
 		{
-			login.setVisible(true);
-		}		
-		else
-		{			
-			login.doLogin(options.getUser(), options.getPass());			
+			login.doLogin(options.getUser(), options.getPass());		
 		}
 	}
 
