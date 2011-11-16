@@ -370,14 +370,17 @@ public class GameUpdater implements DownloadListener {
 	public String getSpoutVersion() throws Exception {
 		String version;
 		URL url;
+		
+		/*
 		if (devmode) {
 			url = new URL("http://ci.getspout.org/job/Spoutcraft/lastSuccessfulBuild/buildNumber");
 		} else {
-			//url = new URL("http://ci.getspout.org/job/Spoutcraft/Recommended/buildNumber");
-			//MIKO: url danstoncube pour les maj "prod", on garde les url spout pour le dev
-			url = new URL("http://www.danstoncube.com/launcher/dtc-scl-buildnumber");
+			url = new URL("http://ci.getspout.org/job/Spoutcraft/Recommended/buildNumber");
 		}
-
+		*/
+		
+		url = new URL("http://www.danstoncube.com/launcher/dtc-scl-buildnumber");
+		
 		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
 		String str = in.readLine();
 		if (str != null) {

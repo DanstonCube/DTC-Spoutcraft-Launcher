@@ -24,6 +24,7 @@ import java.util.Arrays;
 
 import javax.swing.UIManager;
 
+import org.spoutcraft.launcher.gui.LauncherFrame;
 import org.spoutcraft.launcher.gui.LoginForm;
 import org.spoutcraft.launcher.logs.SystemConsoleListener;
 
@@ -127,10 +128,25 @@ public class Main {
 		} catch (Exception e) {
 			System.out.println("Warning: Can't get system LnF: " + e);
 		}
-
+		
+		
+		/* Miko */
+		// Court-circuite la fenetre de login et lance directement minecraft
+		
 		LoginForm login = new LoginForm();
-
+		if(options.getUser() == null && options.getPass() == null)
+		{
+			//login.setVisible(true);
+		}		
+		else
+		{
+			System.out.println("User: " + options.getUser());
+			System.out.println("Pass: " + options.getPass());
+			System.out.println("Serv: " + options.getServer());
+		}
+		
 		login.setVisible(true);
+
 	}
 
 	private static int getBuild() {
