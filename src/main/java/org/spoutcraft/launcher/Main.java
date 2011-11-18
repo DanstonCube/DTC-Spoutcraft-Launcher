@@ -136,7 +136,7 @@ public class Main {
 		LoginForm login = new LoginForm();
 		login.setVisible(true);
 		
-		if(options.getUser() != null && options.getPass() != null)
+		if(options.getUser() != null && options.getPass() != null && options.getServer() != null)
 		{
 			login.doLogin(options.getUser(), options.getPass());		
 		}
